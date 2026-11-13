@@ -1,0 +1,42 @@
+HOME MASSAGEM — Pacote de Identidade Visual + Site
+Tema: Tulipas Brancas
+================================================
+
+Arquivos inclusos:
+
+1. index.html
+   → Site completo one-page
+   → Abra no navegador (duplo clique) ou hospede em qualquer lugar gratuito
+     (Netlify, Vercel, GitHub Pages, Hostinger etc.)
+   → Já tem botão flutuante de WhatsApp e links prontos para o número 19 98422-8460
+
+2. cartao-visita.html
+   → Frente e verso do cartão físico + versão digital
+   → Para imprimir: abra no navegador → Ctrl+P → Salvar como PDF
+   → Recomendado: papel couchê 300g, tamanho 9x5 cm
+
+3. posts-instagram.html
+   → 6 modelos de posts prontos (visual + legenda completa)
+   → Use como referência para criar no Canva ou print da tela
+   → Textos e hashtags já otimizados
+
+CORES DO TEMA (Tulipas Brancas):
+- Creme: #FDFBF7
+- Rosa suave: #F5E6E0
+- Verde sálvia: #7A9B7A
+- Verde claro: #A8C5A8
+
+FONTES:
+- Títulos: Cormorant Garamond
+- Textos: Montserrat
+
+COMO COLOCAR NO AR RÁPIDO:
+1. Abra o index.html no navegador e teste
+2. Crie conta gratuita no Netlify.com
+3. Arraste a pasta inteira "home-massagem" para o Netlify
+4. Pronto! Você terá um link tipo https://homemassagem.netlify.app
+
+Ou me avise se quiser que eu ajuste textos, preços, cores ou adicione mais seções.
+
+WhatsApp configurado: 19 98422-8460
+Região: Lindóia, Águas de Lindóia e Serra Negra
