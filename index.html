@@ -1,1014 +1,1203 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Massagem | Circuito das Águas</title>
-  <meta name="description" content="Massagem relaxante, drenagem linfática, reflexologia e terapêutica em Lindóia, Águas de Lindóia e Serra Negra. Atendimento humanizado a domicílio e em parceria com hotéis.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      /* Nova paleta: Verde Água · Pistache · Verde Oliva */
-      --verde-agua: #7EB8A8;
-      --verde-agua-claro: #A8D4C8;
-      --pistache: #B8C9A3;
-      --pistache-claro: #D4E0C4;
-      --oliva: #6B7F4E;
-      --oliva-escuro: #556640;
-      --creme: #F7F9F4;
-      --branco-suave: #FBFCF8;
-      --text-dark: #2F3529;
-      --text-soft: #5A6352;
-      --shadow: 0 12px 40px rgba(107, 127, 78, 0.12);
-      --tulip-surface: linear-gradient(rgba(251,252,248,0.9), rgba(251,252,248,0.9)), url("pexels-irrabagon-37537107.jpg");
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: var(--creme);
-      color: var(--text-dark);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-    }
-
-    /* Header */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(247, 249, 244, 0.95);
-      backdrop-filter: blur(12px);
-      z-index: 1000;
-      padding: 1rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(126, 184, 168, 0.2);
-    }
-
-    .logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: var(--oliva);
-      text-decoration: none;
-      letter-spacing: 1px;
-    }
-
-    .logo span {
-      color: var(--text-dark);
-      font-weight: 400;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text-soft);
-      margin-left: 1.8rem;
-      font-size: 0.9rem;
-      font-weight: 400;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--oliva);
-    }
-
-    .btn-whatsapp {
-      background: var(--oliva);
-      color: white !important;
-      padding: 0.6rem 1.4rem;
-      border-radius: 50px;
-      font-weight: 500;
-      transition: all 0.3s;
-    }
-
-    .btn-whatsapp:hover {
-      background: var(--oliva-escuro);
-      transform: translateY(-2px);
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 3rem;
-      padding: 8rem 6% 5rem;
-      position: relative;
-      background: linear-gradient(145deg, var(--creme) 0%, var(--pistache-claro) 45%, var(--verde-agua-claro) 100%);
-      overflow: hidden;
-    }
-
-    .hero-content {
-      flex: 1;
-      max-width: 540px;
-      z-index: 2;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: white;
-      color: var(--oliva);
-      padding: 0.45rem 1.1rem;
-      border-radius: 50px;
-      font-size: 0.82rem;
-      font-weight: 500;
-      margin-bottom: 1.6rem;
-      box-shadow: var(--shadow);
-      letter-spacing: 0.3px;
-    }
-
-    .hero h1 {
-      font-size: 3.5rem;
-      line-height: 1.12;
-      margin-bottom: 1.3rem;
-      color: var(--text-dark);
-    }
-
-    .hero h1 span {
-      color: var(--oliva);
-      font-style: italic;
-    }
-
-    .hero p {
-      font-size: 1.08rem;
-      color: var(--text-soft);
-      margin-bottom: 2.2rem;
-      font-weight: 300;
-      line-height: 1.7;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      background: var(--oliva);
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      transition: all 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      box-shadow: 0 8px 25px rgba(107, 127, 78, 0.3);
-    }
-
-    .btn-primary:hover {
-      background: var(--oliva-escuro);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(107, 127, 78, 0.4);
-    }
-
-    .btn-secondary {
-      background: white;
-      color: var(--oliva);
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 500;
-      border: 1.5px solid var(--verde-agua);
-      transition: all 0.3s;
-    }
-
-    .btn-secondary:hover {
-      background: var(--verde-agua);
-      color: white;
-      border-color: var(--verde-agua);
-    }
-
-    /* Foto do Hero - CORRIGIDA */
-    .hero-image {
-      flex: 0 0 400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 2;
-    }
-
-    .hero-photo-wrapper {
-      width: 360px;
-      height: 440px;
-      position: relative;
-    }
-
-    .hero-photo-wrapper::before {
-      content: '';
-      position: absolute;
-      inset: -12px;
-      border-radius: 200px 200px 40px 40px;
-      background: linear-gradient(145deg, var(--verde-agua), var(--pistache));
-      opacity: 0.35;
-      z-index: 0;
-    }
-
-    .hero-photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: 200px 200px 40px 40px;
-      box-shadow: 0 20px 50px rgba(107, 127, 78, 0.2);
-      border: 7px solid white;
-      position: relative;
-      z-index: 1;
-      display: block;
-      background: var(--pistache-claro);
-    }
-
-    /* Sections */
-    section {
-      padding: 5.5rem 6%;
-      position: relative;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
-
-    .section-title h2 {
-      font-size: 2.8rem;
-      color: var(--text-dark);
-      margin-bottom: 0.8rem;
-    }
-
-    .section-title p {
-      color: var(--text-soft);
-      font-size: 1.05rem;
-      max-width: 560px;
-      margin: 0 auto;
-      font-weight: 300;
-    }
-
-    .divider {
-      width: 60px;
-      height: 2px;
-      background: var(--verde-agua);
-      margin: 1rem auto;
-    }
-
-    /* Services */
-    .services {
-      background: var(--branco-suave);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.8rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .service-card {
-      background: white;
-      border-radius: 24px;
-      padding: 2.2rem 1.8rem;
-      box-shadow: var(--shadow);
-      transition: all 0.3s;
-      border: 1px solid rgba(126, 184, 168, 0.15);
-      text-align: center;
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 50px rgba(107, 127, 78, 0.16);
-    }
-
-    .service-icon {
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(135deg, var(--pistache-claro), var(--verde-agua-claro));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.4rem;
-      font-size: 1.8rem;
-    }
-
-    .service-card h3 {
-      font-size: 1.45rem;
-      margin-bottom: 0.7rem;
-      color: var(--text-dark);
-    }
-
-    .service-card p {
-      color: var(--text-soft);
-      font-size: 0.95rem;
-      margin-bottom: 1.2rem;
-      font-weight: 300;
-    }
-
-    .service-price {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.55rem;
-      color: var(--oliva);
-      font-weight: 600;
-    }
-
-    .service-duration {
-      font-size: 0.85rem;
-      color: var(--text-soft);
-      margin-top: 0.3rem;
-    }
-
-    /* About */
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .about-image img {
-      width: 100%;
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      border: 6px solid white;
-      display: block;
-    }
-
-    .experience {
-      background: var(--branco-suave);
-    }
-
-    .experience-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-      align-items: start;
-      gap: 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .experience-video {
-      max-width: 420px;
-      margin: 0 auto;
-    }
-
-    .experience-video video {
-      display: block;
-      width: 100%;
-      max-height: 620px;
-      aspect-ratio: 9 / 16;
-      object-fit: cover;
-      border-radius: 24px;
-      background: var(--pistache-claro);
-      box-shadow: var(--shadow);
-    }
-
-    .experience-video figcaption {
-      padding: 1rem 0.25rem 0;
-      color: var(--text-soft);
-      font-size: 0.92rem;
-      text-align: center;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .gallery-item {
-      overflow: hidden;
-      border-radius: 20px;
-      background: white;
-      box-shadow: var(--shadow);
-    }
-
-    .gallery-image {
-      display: block;
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-    }
-
-    .gallery-item figcaption {
-      padding: 0.8rem 1rem;
-      color: var(--text-soft);
-      font-size: 0.82rem;
-      text-align: center;
-    }
-
-    .about-content h2 {
-      font-size: 2.6rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .about-content p {
-      color: var(--text-soft);
-      margin-bottom: 1.15rem;
-      font-weight: 300;
-    }
-
-    .about-highlights {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 1.5rem;
-    }
-
-    .highlight {
-      background: var(--pistache-claro);
-      color: var(--oliva-escuro);
-      padding: 0.45rem 1.15rem;
-      border-radius: 50px;
-      font-size: 0.84rem;
-      font-weight: 500;
-    }
-
-    /* How it works */
-    .how {
-      background: linear-gradient(180deg, var(--creme), var(--branco-suave));
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .step {
-      text-align: center;
-      padding: 1.5rem;
-    }
-
-    .step-number {
-      width: 52px;
-      height: 52px;
-      background: var(--oliva);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin: 0 auto 1.2rem;
-    }
-
-    .step h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.55rem;
-    }
-
-    .step p {
-      color: var(--text-soft);
-      font-size: 0.95rem;
-      font-weight: 300;
-    }
-
-    /* Prices */
-    .prices-table {
-      max-width: 700px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .price-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.3rem 2rem;
-      border-bottom: 1px solid rgba(126, 184, 168, 0.12);
-    }
-
-    .price-row:last-child {
-      border-bottom: none;
-    }
-
-    .price-row:nth-child(even) {
-      background: var(--branco-suave);
-    }
-
-    .price-name {
-      font-weight: 500;
-    }
-
-    .price-value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      color: var(--oliva);
-      font-weight: 600;
-    }
-
-    .price-note {
-      text-align: center;
-      margin-top: 1.5rem;
-      color: var(--text-soft);
-      font-size: 0.9rem;
-      font-weight: 300;
-    }
-
-    /* CTA */
-    .cta {
-      background: linear-gradient(135deg, var(--oliva) 0%, var(--oliva-escuro) 100%);
-      color: white;
-      text-align: center;
-      padding: 5rem 6%;
-    }
-
-    .cta h2 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-    }
-
-    .cta p {
-      font-size: 1.15rem;
-      opacity: 0.92;
-      margin-bottom: 2rem;
-      font-weight: 300;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta .btn-primary {
-      background: white;
-      color: var(--oliva);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-
-    .cta .btn-primary:hover {
-      background: var(--creme);
-      transform: translateY(-3px);
-    }
-
-    /* Contact */
-    .contact-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.8rem;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .contact-item {
-      background: white;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .services,
-    .experience,
-    .service-card,
-    .gallery-item,
-    .price-row,
-    .price-row:nth-child(even),
-    .contact-item {
-      background-image: var(--tulip-surface);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-
-    .contact-item h3 {
-      font-size: 1.4rem;
-      margin-bottom: 0.8rem;
-      color: var(--oliva);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--text-dark);
-      color: #c5cbb8;
-      text-align: center;
-      padding: 2.5rem 6%;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: var(--verde-agua);
-      text-decoration: none;
-    }
-
-    /* Floating WhatsApp */
-    .float-whatsapp {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #25D366;
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-      z-index: 999;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-
-    .float-whatsapp:hover {
-      transform: scale(1.1);
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-      .reveal-on-scroll {
-        opacity: 0;
-        transform: translateY(16px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Massagem | Circuito das Águas</title>
+    <meta
+      name="description"
+      content="Massagem relaxante, drenagem linfática, reflexologia e terapêutica em Lindóia, Águas de Lindóia e Serra Negra. Atendimento humanizado a domicílio e em parceria com hotéis."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        /* Nova paleta: Verde Água · Pistache · Verde Oliva */
+        --verde-agua: #7eb8a8;
+        --verde-agua-claro: #a8d4c8;
+        --pistache: #b8c9a3;
+        --pistache-claro: #d4e0c4;
+        --oliva: #6b7f4e;
+        --oliva-escuro: #556640;
+        --creme: #f7f9f4;
+        --branco-suave: #fbfcf8;
+        --text-dark: #2f3529;
+        --text-soft: #5a6352;
+        --shadow: 0 12px 40px rgba(107, 127, 78, 0.12);
+        --tulip-surface:
+          linear-gradient(rgba(251, 252, 248, 0.9), rgba(251, 252, 248, 0.9)),
+          url('pexels-irrabagon-37537107.jpg');
       }
 
-      .reveal-on-scroll.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .reveal-on-scroll {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
-    }
-
-    /* Responsive */
-    @media (max-width: 980px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 7rem;
-        gap: 2.5rem;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      .hero h1 {
-        font-size: 2.6rem;
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background: var(--creme);
+        color: var(--text-dark);
+        line-height: 1.6;
+        overflow-x: hidden;
       }
 
-      .hero-buttons {
-        justify-content: center;
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 600;
       }
 
-      .hero-image {
-        flex: none;
+      /* Header */
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(247, 249, 244, 0.95);
+        backdrop-filter: blur(12px);
+        z-index: 1000;
+        padding: 1rem 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(126, 184, 168, 0.2);
       }
 
-      .hero-photo-wrapper {
-        width: 280px;
-        height: 340px;
-      }
-
-      .about {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2.5rem;
-      }
-
-      .experience-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .experience-video {
-        width: min(100%, 360px);
-      }
-
-      nav a:not(.btn-whatsapp) {
-        display: none;
-      }
-    }
-
-    @media (max-width: 600px) {
       .logo {
-        font-size: 1.05rem;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--oliva);
+        text-decoration: none;
+        letter-spacing: 1px;
+      }
+
+      .logo span {
+        color: var(--text-dark);
+        font-weight: 400;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--text-soft);
+        margin-left: 1.8rem;
+        font-size: 0.9rem;
+        font-weight: 400;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: var(--oliva);
+      }
+
+      .btn-whatsapp {
+        background: var(--oliva);
+        color: white !important;
+        padding: 0.6rem 1.4rem;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s;
+      }
+
+      .btn-whatsapp:hover {
+        background: var(--oliva-escuro);
+        transform: translateY(-2px);
+      }
+
+      /* Hero */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3rem;
+        padding: 8rem 6% 5rem;
+        position: relative;
+        background: linear-gradient(
+          145deg,
+          var(--creme) 0%,
+          var(--pistache-claro) 45%,
+          var(--verde-agua-claro) 100%
+        );
+        overflow: hidden;
+      }
+
+      .hero-content {
+        flex: 1;
+        max-width: 540px;
+        z-index: 2;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: white;
+        color: var(--oliva);
+        padding: 0.45rem 1.1rem;
+        border-radius: 50px;
+        font-size: 0.82rem;
+        font-weight: 500;
+        margin-bottom: 1.6rem;
+        box-shadow: var(--shadow);
         letter-spacing: 0.3px;
       }
 
-      nav .btn-whatsapp {
-        margin-left: 0.5rem;
-        padding: 0.5rem 0.8rem;
-        font-size: 0.8rem;
+      .hero h1 {
+        font-size: 3.5rem;
+        line-height: 1.12;
+        margin-bottom: 1.3rem;
+        color: var(--text-dark);
       }
 
-      .hero h1 {
-        font-size: 2.15rem;
+      .hero h1 span {
+        color: var(--oliva);
+        font-style: italic;
+      }
+
+      .hero p {
+        font-size: 1.08rem;
+        color: var(--text-soft);
+        margin-bottom: 2.2rem;
+        font-weight: 300;
+        line-height: 1.7;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        background: var(--oliva);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: all 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        box-shadow: 0 8px 25px rgba(107, 127, 78, 0.3);
+      }
+
+      .btn-primary:hover {
+        background: var(--oliva-escuro);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(107, 127, 78, 0.4);
+      }
+
+      .btn-secondary {
+        background: white;
+        color: var(--oliva);
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 500;
+        border: 1.5px solid var(--verde-agua);
+        transition: all 0.3s;
+      }
+
+      .btn-secondary:hover {
+        background: var(--verde-agua);
+        color: white;
+        border-color: var(--verde-agua);
+      }
+
+      /* Foto do Hero - CORRIGIDA */
+      .hero-image {
+        flex: 0 0 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+      }
+
+      .hero-photo-wrapper {
+        width: 360px;
+        height: 440px;
+        position: relative;
+      }
+
+      .hero-photo-wrapper::before {
+        content: '';
+        position: absolute;
+        inset: -12px;
+        border-radius: 200px 200px 40px 40px;
+        background: linear-gradient(145deg, var(--verde-agua), var(--pistache));
+        opacity: 0.35;
+        z-index: 0;
+      }
+
+      .hero-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        border-radius: 200px 200px 40px 40px;
+        box-shadow: 0 20px 50px rgba(107, 127, 78, 0.2);
+        border: 7px solid white;
+        position: relative;
+        z-index: 1;
+        display: block;
+        background: var(--pistache-claro);
+      }
+
+      /* Sections */
+      section {
+        padding: 5.5rem 6%;
+        position: relative;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3.5rem;
       }
 
       .section-title h2 {
-        font-size: 2.2rem;
+        font-size: 2.8rem;
+        color: var(--text-dark);
+        margin-bottom: 0.8rem;
       }
 
-      .price-row {
-        padding: 1.1rem 1.3rem;
-        flex-direction: column;
-        gap: 0.3rem;
+      .section-title p {
+        color: var(--text-soft);
+        font-size: 1.05rem;
+        max-width: 560px;
+        margin: 0 auto;
+        font-weight: 300;
+      }
+
+      .divider {
+        width: 60px;
+        height: 2px;
+        background: var(--verde-agua);
+        margin: 1rem auto;
+      }
+
+      /* Services */
+      .services {
+        background: var(--branco-suave);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.8rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .service-card {
+        background: white;
+        border-radius: 24px;
+        padding: 2.2rem 1.8rem;
+        box-shadow: var(--shadow);
+        transition: all 0.3s;
+        border: 1px solid rgba(126, 184, 168, 0.15);
+        text-align: center;
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(107, 127, 78, 0.16);
+      }
+
+      .service-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(
+          135deg,
+          var(--pistache-claro),
+          var(--verde-agua-claro)
+        );
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.4rem;
+        font-size: 1.8rem;
+      }
+
+      .service-card h3 {
+        font-size: 1.45rem;
+        margin-bottom: 0.7rem;
+        color: var(--text-dark);
+      }
+
+      .service-card p {
+        color: var(--text-soft);
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+        font-weight: 300;
+      }
+
+      .service-price {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.55rem;
+        color: var(--oliva);
+        font-weight: 600;
+      }
+
+      .service-duration {
+        font-size: 0.85rem;
+        color: var(--text-soft);
+        margin-top: 0.3rem;
+      }
+
+      /* About */
+      .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .about-image img {
+        width: 100%;
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        border: 6px solid white;
+        display: block;
+      }
+
+      .experience {
+        background: var(--branco-suave);
+      }
+
+      .experience-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        align-items: start;
+        gap: 2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .experience-video {
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      .experience-video video {
+        display: block;
+        width: 100%;
+        max-height: 620px;
+        aspect-ratio: 9 / 16;
+        object-fit: cover;
+        border-radius: 24px;
+        background: var(--pistache-claro);
+        box-shadow: var(--shadow);
+      }
+
+      .experience-video figcaption {
+        padding: 1rem 0.25rem 0;
+        color: var(--text-soft);
+        font-size: 0.92rem;
         text-align: center;
       }
 
       .gallery-grid {
-        gap: 0.7rem;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .gallery-item {
+        overflow: hidden;
+        border-radius: 20px;
+        background: white;
+        box-shadow: var(--shadow);
+      }
+
+      .gallery-image {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
       }
 
       .gallery-item figcaption {
-        padding: 0.65rem 0.4rem;
-        font-size: 0.75rem;
+        padding: 0.8rem 1rem;
+        color: var(--text-soft);
+        font-size: 0.82rem;
+        text-align: center;
       }
-    }
-  </style>
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <a href="#" class="logo">Home <span>Massagem White Tulip</span></a>
-    <nav>
-      <a href="#servicos">Serviços</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#galeria">Fotos e vídeo</a>
-      <a href="#precos">Preços</a>
-      <a href="#contato">Contato</a>
-      <a href="https://wa.me/5519984228460?text=Olá!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20massagem." class="btn-whatsapp" target="_blank">Agendar</a>
-    </nav>
-  </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-badge">
-        <svg class="tulip-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M12 9.5V21" fill="none" stroke="#6B7F4E" stroke-width="1.8" stroke-linecap="round"/>
-          <path d="M12 16c-2.1-.1-3.7-1.4-4.4-3.7 2.2 0 3.8 1.2 4.4 3.7Z" fill="#7EB8A8" stroke="#6B7F4E" stroke-width=".8" stroke-linejoin="round"/>
-          <path d="M12 17.5c2.1-.1 3.7-1.4 4.4-3.7-2.2 0-3.8 1.2-4.4 3.7Z" fill="#7EB8A8" stroke="#6B7F4E" stroke-width=".8" stroke-linejoin="round"/>
-          <path d="M7.5 3c.4 2.4 1.4 4.2 3.1 5.3.2-2.3.7-4 1.4-5.3.7 1.3 1.2 3 1.4 5.3 1.7-1.1 2.7-2.9 3.1-5.3-1.8.2-3.3 1-4.5 2.3C10.8 4 9.3 3.2 7.5 3Z" fill="#fff" stroke="#6B7F4E" stroke-width="1.4" stroke-linejoin="round"/>
-        </svg>
-        Atendimento humanizado
-      </div>
-      <h1>Sua primeira sessão <span>comigo</span></h1>
-      <p>Eu te recebo com calma, converso sobre o que você precisa e conduzo o atendimento do começo ao fim. Massagem relaxante, drenagem, reflexologia e terapêutica em Lindóia, Águas de Lindóia e Serra Negra.</p>
-      <div class="hero-buttons">
-        <a href="https://wa.me/5519984228460?text=Olá!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20massagem." class="btn-primary" target="_blank">
-          Me chama no WhatsApp
-        </a>
-        <a href="#servicos" class="btn-secondary">Ver serviços</a>
-      </div>
-    </div>
+      .about-content h2 {
+        font-size: 2.6rem;
+        margin-bottom: 1.2rem;
+      }
 
-    <div class="hero-image">
-      <div class="hero-photo-wrapper">
-        <img src="pexels-andrea-prochilo-3062027-31234759.jpg" alt="Massagem relaxante nas costas" class="hero-photo">
-      </div>
-    </div>
-  </section>
+      .about-content p {
+        color: var(--text-soft);
+        margin-bottom: 1.15rem;
+        font-weight: 300;
+      }
 
-  <!-- Services -->
-  <section class="services" id="servicos">
-    <div class="section-title">
-      <h2>Cuidados que transformam</h2>
-      <div class="divider"></div>
-      <p>Técnicas profissionais com toque humanizado. Atendimento a domicílio ou em parceria com hotéis e pousadas.</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">🌿</div>
-        <h3>Massagem Relaxante</h3>
-        <p>Alívio profundo de tensões, redução do estresse e sensação de bem-estar completo. Ideal para quem precisa desacelerar.</p>
-        <div class="service-price">R$ 160 – 180</div>
-        <div class="service-duration">50 a 60 minutos</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">💧</div>
-        <h3>Drenagem Linfática</h3>
-        <p>Reduz inchaço, melhora a circulação e elimina toxinas. Técnica suave e eficaz para o corpo e a autoestima.</p>
-        <div class="service-price">R$ 170 – 200</div>
-        <div class="service-duration">50 a 60 minutos</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🦶</div>
-        <h3>Reflexologia</h3>
-        <p>Estimulação de pontos nos pés que se conectam a todo o corpo. Alívio de dores e equilíbrio energético.</p>
-        <div class="service-price">R$ 130 – 150</div>
-        <div class="service-duration">40 a 50 minutos</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">✨</div>
-        <h3>Massagem Facial</h3>
-        <p>Relaxamento da face, redução de tensão e revitalização da pele. Um momento de cuidado especial.</p>
-        <div class="service-price">R$ 120 – 140</div>
-        <div class="service-duration">40 a 50 minutos</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">💜</div>
-        <h3>Terapêutica (Fibromialgia)</h3>
-        <p>Atendimento especializado e cuidadoso para alívio de dores crônicas e melhora da qualidade de vida.</p>
-        <div class="service-price">R$ 190 – 220</div>
-        <div class="service-duration">60 minutos</div>
-      </div>
-    </div>
-  </section>
+      .about-highlights {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 1.5rem;
+      }
 
-  <!-- About -->
-  <section id="sobre">
-    <div class="about">
-      <div class="about-image">
-        <img src="foto-principal.jpeg" alt="Massoterapeuta da Home Massagem" loading="lazy" decoding="async">
-      </div>
-      <div class="about-content">
-        <h2>Home Massagem White Tulip</h2>
-        <p>Meu nome é Silmara, sou massoterapeuta formada, com atendimento humanizado e foco no que o seu corpo realmente precisa.</p>
-        <p>Atendo em <strong>Lindóia, Águas de Lindóia e Serra Negra</strong>. Levo toda a estrutura (maca, óleos e materiais) até você — seja em casa, hotel ou pousada.</p>
-        <p>Acredito que o toque profissional, aliado à escuta e ao cuidado, transforma o momento da massagem em um verdadeiro ritual de bem-estar.</p>
-        <div class="about-highlights">
-          <span class="highlight">Top Corpus</span>
-          <span class="highlight">Atendimento a domicílio</span>
-          <span class="highlight">Parceria com hotéis</span>
-          <span class="highlight">Circuito das Águas</span>
+      .highlight {
+        background: var(--pistache-claro);
+        color: var(--oliva-escuro);
+        padding: 0.45rem 1.15rem;
+        border-radius: 50px;
+        font-size: 0.84rem;
+        font-weight: 500;
+      }
+
+      /* How it works */
+      .how {
+        background: linear-gradient(180deg, var(--creme), var(--branco-suave));
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .step {
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .step-number {
+        width: 52px;
+        height: 52px;
+        background: var(--oliva);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 0 auto 1.2rem;
+      }
+
+      .step h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.55rem;
+      }
+
+      .step p {
+        color: var(--text-soft);
+        font-size: 0.95rem;
+        font-weight: 300;
+      }
+
+      /* Prices */
+      .prices-table {
+        max-width: 700px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .price-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.3rem 2rem;
+        border-bottom: 1px solid rgba(126, 184, 168, 0.12);
+      }
+
+      .price-row:last-child {
+        border-bottom: none;
+      }
+
+      .price-row:nth-child(even) {
+        background: var(--branco-suave);
+      }
+
+      .price-name {
+        font-weight: 500;
+      }
+
+      .price-value {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.4rem;
+        color: var(--oliva);
+        font-weight: 600;
+      }
+
+      .price-note {
+        text-align: center;
+        margin-top: 1.5rem;
+        color: var(--text-soft);
+        font-size: 0.9rem;
+        font-weight: 300;
+      }
+
+      /* CTA */
+      .cta {
+        background: linear-gradient(
+          135deg,
+          var(--oliva) 0%,
+          var(--oliva-escuro) 100%
+        );
+        color: white;
+        text-align: center;
+        padding: 5rem 6%;
+      }
+
+      .cta h2 {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .cta p {
+        font-size: 1.15rem;
+        opacity: 0.92;
+        margin-bottom: 2rem;
+        font-weight: 300;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta .btn-primary {
+        background: white;
+        color: var(--oliva);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .cta .btn-primary:hover {
+        background: var(--creme);
+        transform: translateY(-3px);
+      }
+
+      /* Contact */
+      .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.8rem;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .contact-item {
+        background: white;
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+      }
+
+      .services,
+      .experience,
+      .service-card,
+      .gallery-item,
+      .price-row,
+      .price-row:nth-child(even),
+      .contact-item {
+        background-image: var(--tulip-surface);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .contact-item h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+        color: var(--oliva);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--text-dark);
+        color: #c5cbb8;
+        text-align: center;
+        padding: 2.5rem 6%;
+        font-size: 0.9rem;
+      }
+
+      footer a {
+        color: var(--verde-agua);
+        text-decoration: none;
+      }
+
+      /* Floating WhatsApp */
+      .float-whatsapp {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background: #25d366;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        z-index: 999;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      .float-whatsapp:hover {
+        transform: scale(1.1);
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .reveal-on-scroll {
+          opacity: 0;
+          transform: translateY(16px);
+          transition:
+            opacity 0.6s ease,
+            transform 0.6s ease;
+        }
+
+        .reveal-on-scroll.is-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal-on-scroll {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 980px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+          padding-top: 7rem;
+          gap: 2.5rem;
+        }
+
+        .hero h1 {
+          font-size: 2.6rem;
+        }
+
+        .hero-buttons {
+          justify-content: center;
+        }
+
+        .hero-image {
+          flex: none;
+        }
+
+        .hero-photo-wrapper {
+          width: 280px;
+          height: 340px;
+        }
+
+        .about {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 2.5rem;
+        }
+
+        .experience-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .experience-video {
+          width: min(100%, 360px);
+        }
+
+        nav a:not(.btn-whatsapp) {
+          display: none;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .logo {
+          font-size: 1.05rem;
+          letter-spacing: 0.3px;
+        }
+
+        nav .btn-whatsapp {
+          margin-left: 0.5rem;
+          padding: 0.5rem 0.8rem;
+          font-size: 0.8rem;
+        }
+
+        .hero h1 {
+          font-size: 2.15rem;
+        }
+
+        .section-title h2 {
+          font-size: 2.2rem;
+        }
+
+        .price-row {
+          padding: 1.1rem 1.3rem;
+          flex-direction: column;
+          gap: 0.3rem;
+          text-align: center;
+        }
+
+        .gallery-grid {
+          gap: 0.7rem;
+        }
+
+        .gallery-item figcaption {
+          padding: 0.65rem 0.4rem;
+          font-size: 0.75rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <a href="#" class="logo">Home <span>Massagem Humanizada</span></a>
+      <nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#galeria">Fotos e vídeo</a>
+        <a href="#precos">Preços</a>
+        <a href="#contato">Contato</a>
+        <a
+          href="https://wa.me/5519984228460?text=Olá!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20massagem."
+          class="btn-whatsapp"
+          target="_blank"
+          >Agendar</a
+        >
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <svg
+            class="tulip-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M12 9.5V21"
+              fill="none"
+              stroke="#6B7F4E"
+              stroke-width="1.8"
+              stroke-linecap="round"
+            />
+            <path
+              d="M12 16c-2.1-.1-3.7-1.4-4.4-3.7 2.2 0 3.8 1.2 4.4 3.7Z"
+              fill="#7EB8A8"
+              stroke="#6B7F4E"
+              stroke-width=".8"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M12 17.5c2.1-.1 3.7-1.4 4.4-3.7-2.2 0-3.8 1.2-4.4 3.7Z"
+              fill="#7EB8A8"
+              stroke="#6B7F4E"
+              stroke-width=".8"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M7.5 3c.4 2.4 1.4 4.2 3.1 5.3.2-2.3.7-4 1.4-5.3.7 1.3 1.2 3 1.4 5.3 1.7-1.1 2.7-2.9 3.1-5.3-1.8.2-3.3 1-4.5 2.3C10.8 4 9.3 3.2 7.5 3Z"
+              fill="#fff"
+              stroke="#6B7F4E"
+              stroke-width="1.4"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Atendimento humanizado
+        </div>
+        <h1>Sua primeira sessão <span>comigo</span></h1>
+        <p>
+          Eu te recebo com calma, converso sobre o que você precisa e conduzo o
+          atendimento do começo ao fim. Massagem relaxante, drenagem,
+          reflexologia e terapêutica em Lindóia, Águas de Lindóia e Serra Negra.
+        </p>
+        <div class="hero-buttons">
+          <a
+            href="https://wa.me/5519984228460?text=Olá!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20massagem."
+            class="btn-primary"
+            target="_blank"
+          >
+            Me chama no WhatsApp
+          </a>
+          <a href="#servicos" class="btn-secondary">Ver serviços</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="experience" id="galeria">
-    <div class="section-title">
-      <h2>Um cuidado que você pode ver</h2>
-      <div class="divider"></div>
-      <p>Conheça um pouco do ambiente e dos cuidados preparados para cada sessão.</p>
-    </div>
-    <div class="experience-layout">
-      <figure class="experience-video">
-        <video controls autoplay muted loop playsinline preload="auto" poster="pexels-jonathanborba-19641817.jpg" aria-label="Vídeo de uma sessão de massagem">
-          <source src="13556104_1080_1920_60fps.mp4" type="video/mp4">
-          Seu navegador não consegue reproduzir este vídeo.
-        </video>
-        <figcaption>Um momento de pausa, cuidado e bem-estar.</figcaption>
-      </figure>
-      <div class="gallery-grid">
-        <figure class="gallery-item">
-          <img class="gallery-image" src="pexels-andrea-prochilo-3062027-31234759.jpg" alt="Massagem relaxante nas costas" loading="lazy" decoding="async">
-          <figcaption>Massagem relaxante</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img class="gallery-image" src="pexels-jonathanborba-19641817.jpg" alt="Massagem terapêutica" loading="lazy" decoding="async">
-          <figcaption>Cuidado terapêutico</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img class="gallery-image" src="pexels-tima-miroshnichenko-6188041.jpg" alt="Massagem relaxante nos pés" loading="lazy" decoding="async">
-          <figcaption>Massagem nos pés</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img class="gallery-image" src="pexels-paolo-ortega-155343406-10893352.jpg" alt="Massagem nos pés para relaxamento" loading="lazy" decoding="async">
-          <figcaption>Reflexologia</figcaption>
-        </figure>
+      <div class="hero-image">
+        <div class="hero-photo-wrapper">
+          <img
+            src="pexels-andrea-prochilo-3062027-31234759.jpg"
+            alt="Massagem relaxante nas costas"
+            class="hero-photo"
+          />
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- How it works -->
-  <section class="how">
-    <div class="section-title">
-      <h2>Como funciona</h2>
-      <div class="divider"></div>
-      <p>Simples, seguro e pensado no seu conforto</p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <h3>Me chama</h3>
-        <p>Envie uma mensagem no WhatsApp informando o serviço e a melhor data.</p>
+    <!-- Services -->
+    <section class="services" id="servicos">
+      <div class="section-title">
+        <h2>Cuidados que transformam</h2>
+        <div class="divider"></div>
+        <p>
+          Técnicas profissionais com toque humanizado. Atendimento a domicílio
+          ou em parceria com hotéis e pousadas.
+        </p>
       </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <h3>Confirmamos</h3>
-        <p>Conversamos sobre suas necessidades e agendamos o horário ideal.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🌿</div>
+          <h3>Massagem Relaxante</h3>
+          <p>
+            Alívio profundo de tensões, redução do estresse e sensação de
+            bem-estar completo. Ideal para quem precisa desacelerar.
+          </p>
+          <div class="service-price">R$ 160 – 180</div>
+          <div class="service-duration">50 a 60 minutos</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💧</div>
+          <h3>Drenagem Linfática</h3>
+          <p>
+            Reduz inchaço, melhora a circulação e elimina toxinas. Técnica suave
+            e eficaz para o corpo e a autoestima.
+          </p>
+          <div class="service-price">R$ 170 – 200</div>
+          <div class="service-duration">50 a 60 minutos</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🦶</div>
+          <h3>Reflexologia</h3>
+          <p>
+            Estimulação de pontos nos pés que se conectam a todo o corpo. Alívio
+            de dores e equilíbrio energético.
+          </p>
+          <div class="service-price">R$ 130 – 150</div>
+          <div class="service-duration">40 a 50 minutos</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✨</div>
+          <h3>Massagem Facial</h3>
+          <p>
+            Relaxamento da face, redução de tensão e revitalização da pele. Um
+            momento de cuidado especial.
+          </p>
+          <div class="service-price">R$ 120 – 140</div>
+          <div class="service-duration">40 a 50 minutos</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💜</div>
+          <h3>Terapêutica (Fibromialgia)</h3>
+          <p>
+            Atendimento especializado e cuidadoso para alívio de dores crônicas
+            e melhora da qualidade de vida.
+          </p>
+          <div class="service-price">R$ 190 – 220</div>
+          <div class="service-duration">60 minutos</div>
+        </div>
       </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <h3>Eu chego</h3>
-        <p>Levo maca, óleos e tudo o que for necessário. Você só relaxa.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">4</div>
-        <h3>Sessão completa</h3>
-        <p>Conduzo todo o atendimento com calma e atenção do início ao fim.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Prices -->
-  <section id="precos">
-    <div class="section-title">
-      <h2>Valores</h2>
-      <div class="divider"></div>
-      <p>Preços alinhados à região do Circuito das Águas + deslocamento</p>
-    </div>
-    <div class="prices-table">
-      <div class="price-row">
-        <span class="price-name">Massagem Relaxante</span>
-        <span class="price-value">R$ 160 – 180</span>
+    <!-- About -->
+    <section id="sobre">
+      <div class="about">
+        <div class="about-image">
+          <img
+            src="foto-principal.jpeg"
+            alt="Massoterapeuta da Home Massagem"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="about-content">
+          <h2>Home Massagem White Tulip</h2>
+          <p>
+            Meu nome é Silmara, sou massoterapeuta formada, com atendimento
+            humanizado e foco no que o seu corpo realmente precisa.
+          </p>
+          <p>
+            Atendo em <strong>Lindóia, Águas de Lindóia e Serra Negra</strong>.
+            Levo toda a estrutura (maca, óleos e materiais) até você — seja em
+            casa, hotel ou pousada.
+          </p>
+          <p>
+            Acredito que o toque profissional, aliado à escuta e ao cuidado,
+            transforma o momento da massagem em um verdadeiro ritual de
+            bem-estar.
+          </p>
+          <div class="about-highlights">
+            <span class="highlight">Top Corpus</span>
+            <span class="highlight">Atendimento a domicílio</span>
+            <span class="highlight">Parceria com hotéis</span>
+            <span class="highlight">Circuito das Águas</span>
+          </div>
+        </div>
       </div>
-      <div class="price-row">
-        <span class="price-name">Drenagem Linfática</span>
-        <span class="price-value">R$ 170 – 200</span>
-      </div>
-      <div class="price-row">
-        <span class="price-name">Reflexologia</span>
-        <span class="price-value">R$ 130 – 150</span>
-      </div>
-      <div class="price-row">
-        <span class="price-name">Massagem Facial</span>
-        <span class="price-value">R$ 120 – 140</span>
-      </div>
-      <div class="price-row">
-        <span class="price-name">Terapêutica (Fibromialgia)</span>
-        <span class="price-value">R$ 190 – 220</span>
-      </div>
-    </div>
-    <p class="price-note">Valores podem variar conforme duração e distância. Pacotes com desconto disponíveis. Aceito PIX, dinheiro e cartão.</p>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <h2>Pronta para se cuidar?</h2>
-    <p>Sua primeira sessão pode ser o começo de uma nova rotina de bem-estar. Me chama e vamos conversar.</p>
-    <a href="https://wa.me/5519984228460?text=Olá!%20Gostaria%20de%20agendar%20minha%20primeira%20sessão." class="btn-primary" target="_blank">
-      Agendar pelo WhatsApp
+    <section class="experience" id="galeria">
+      <div class="section-title">
+        <h2>Um cuidado que você pode ver</h2>
+        <div class="divider"></div>
+        <p>
+          Conheça um pouco do ambiente e dos cuidados preparados para cada
+          sessão.
+        </p>
+      </div>
+      <div class="experience-layout">
+        <figure class="experience-video">
+          <video
+            controls
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            poster="pexels-jonathanborba-19641817.jpg"
+            aria-label="Vídeo de uma sessão de massagem"
+          >
+            <source src="13556104_1080_1920_60fps.mp4" type="video/mp4" />
+            Seu navegador não consegue reproduzir este vídeo.
+          </video>
+          <figcaption>Um momento de pausa, cuidado e bem-estar.</figcaption>
+        </figure>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img
+              class="gallery-image"
+              src="pexels-andrea-prochilo-3062027-31234759.jpg"
+              alt="Massagem relaxante nas costas"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Massagem relaxante</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-image"
+              src="pexels-jonathanborba-19641817.jpg"
+              alt="Massagem terapêutica"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Cuidado terapêutico</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-image"
+              src="pexels-tima-miroshnichenko-6188041.jpg"
+              alt="Massagem relaxante nos pés"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Massagem nos pés</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-image"
+              src="pexels-paolo-ortega-155343406-10893352.jpg"
+              alt="Massagem nos pés para relaxamento"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Reflexologia</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how">
+      <div class="section-title">
+        <h2>Como funciona</h2>
+        <div class="divider"></div>
+        <p>Simples, seguro e pensado no seu conforto</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Me chama</h3>
+          <p>
+            Envie uma mensagem no WhatsApp informando o serviço e a melhor data.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Confirmamos</h3>
+          <p>
+            Conversamos sobre suas necessidades e agendamos o horário ideal.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Eu chego</h3>
+          <p>Levo maca, óleos e tudo o que for necessário. Você só relaxa.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Sessão completa</h3>
+          <p>
+            Conduzo todo o atendimento com calma e atenção do início ao fim.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prices -->
+    <section id="precos">
+      <div class="section-title">
+        <h2>Valores</h2>
+        <div class="divider"></div>
+        <p>Preços alinhados à região do Circuito das Águas + deslocamento</p>
+      </div>
+      <div class="prices-table">
+        <div class="price-row">
+          <span class="price-name">Massagem Relaxante</span>
+          <span class="price-value">R$ 160 – 180</span>
+        </div>
+        <div class="price-row">
+          <span class="price-name">Drenagem Linfática</span>
+          <span class="price-value">R$ 170 – 200</span>
+        </div>
+        <div class="price-row">
+          <span class="price-name">Reflexologia</span>
+          <span class="price-value">R$ 130 – 150</span>
+        </div>
+        <div class="price-row">
+          <span class="price-name">Massagem Facial</span>
+          <span class="price-value">R$ 120 – 140</span>
+        </div>
+        <div class="price-row">
+          <span class="price-name">Terapêutica (Fibromialgia)</span>
+          <span class="price-value">R$ 190 – 220</span>
+        </div>
+      </div>
+      <p class="price-note">
+        Valores podem variar conforme duração e distância. Pacotes com desconto
+        disponíveis. Aceito PIX, dinheiro e cartão.
+      </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <h2>Pronta para se cuidar?</h2>
+      <p>
+        Sua primeira sessão pode ser o começo de uma nova rotina de bem-estar.
+        Me chama e vamos conversar.
+      </p>
+      <a
+        href="https://wa.me/5519984228460?text=Olá!%20Gostaria%20de%20agendar%20minha%20primeira%20sessão."
+        class="btn-primary"
+        target="_blank"
+      >
+        Agendar pelo WhatsApp
+      </a>
+    </section>
+
+    <!-- Contact -->
+    <section id="contato">
+      <div class="section-title">
+        <h2>Contato</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="contact-info">
+        <div class="contact-item">
+          <h3>WhatsApp</h3>
+          <p>
+            <a
+              href="https://wa.me/5519984228460"
+              target="_blank"
+              style="color: var(--oliva); font-weight: 500"
+              >(19) 98422-8460</a
+            >
+          </p>
+        </div>
+        <div class="contact-item">
+          <h3>Região</h3>
+          <p>Lindóia<br />Águas de Lindóia<br />Serra Negra</p>
+        </div>
+        <div class="contact-item">
+          <h3>Atendimento</h3>
+          <p>Domicílio<br />Hotéis e Pousadas<br />Com agendamento prévio</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        © 2026 Home Massagem · Circuito das Águas · Lindóia, Águas de Lindóia e
+        Serra Negra
+      </p>
+      <p style="margin-top: 0.5rem; font-size: 0.85rem">
+        Formação Top Corpus · Atendimento humanizado
+      </p>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a
+      href="https://wa.me/5519984228460?text=Olá!%20Gostaria%20de%20agendar%20uma%20sessão."
+      class="float-whatsapp"
+      target="_blank"
+      title="Agendar no WhatsApp"
+    >
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+        <path
+          d="M16.004 0C7.174 0 0 7.176 0 16.004c0 2.824.738 5.584 2.142 8.01L.07 31.26l7.46-1.956A15.93 15.93 0 0016.004 32C24.83 32 32 24.824 32 16.004 32 7.176 24.83 0 16.004 0zm0 29.3a13.26 13.26 0 01-6.76-1.85l-.484-.288-4.926 1.292 1.316-4.804-.316-.494A13.25 13.25 0 012.7 16.004c0-7.34 5.97-13.31 13.304-13.31 7.34 0 13.31 5.97 13.31 13.31 0 7.334-5.97 13.296-13.31 13.296zm7.3-9.96c-.4-.2-2.37-1.17-2.738-1.304-.368-.134-.636-.2-.904.2-.268.4-1.036 1.304-1.27 1.572-.234.268-.468.3-.868.1-.4-.2-1.69-.622-3.22-1.984-1.19-1.06-1.994-2.37-2.228-2.77-.234-.4-.026-.616.176-.816.18-.18.4-.468.6-.702.2-.234.268-.4.4-.668.134-.268.066-.502-.034-.702-.1-.2-.904-2.178-1.238-2.98-.326-.784-.658-.678-.904-.69h-.772c-.268 0-.702.1-1.07.502-.368.4-1.404 1.372-1.404 3.346 0 1.974 1.436 3.88 1.636 4.148.2.268 2.826 4.314 6.846 6.05 2.55 1.104 3.55 1.192 4.824.998.736-.114 2.37-.968 2.704-1.904.334-.936.334-1.738.234-1.904-.1-.168-.368-.268-.768-.468z"
+        />
+      </svg>
     </a>
-  </section>
+    <script>
+      if (
+        'IntersectionObserver' in window &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      ) {
+        const revealObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
 
-  <!-- Contact -->
-  <section id="contato">
-    <div class="section-title">
-      <h2>Contato</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="contact-info">
-      <div class="contact-item">
-        <h3>WhatsApp</h3>
-        <p><a href="https://wa.me/5519984228460" target="_blank" style="color: var(--oliva); font-weight: 500;">(19) 98422-8460</a></p>
-      </div>
-      <div class="contact-item">
-        <h3>Região</h3>
-        <p>Lindóia<br>Águas de Lindóia<br>Serra Negra</p>
-      </div>
-      <div class="contact-item">
-        <h3>Atendimento</h3>
-        <p>Domicílio<br>Hotéis e Pousadas<br>Com agendamento prévio</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 Home Massagem · Circuito das Águas · Lindóia, Águas de Lindóia e Serra Negra</p>
-    <p style="margin-top: 0.5rem; font-size: 0.85rem;">Formação Top Corpus · Atendimento humanizado</p>
-  </footer>
-
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/5519984228460?text=Olá!%20Gostaria%20de%20agendar%20uma%20sessão." class="float-whatsapp" target="_blank" title="Agendar no WhatsApp">
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path d="M16.004 0C7.174 0 0 7.176 0 16.004c0 2.824.738 5.584 2.142 8.01L.07 31.26l7.46-1.956A15.93 15.93 0 0016.004 32C24.83 32 32 24.824 32 16.004 32 7.176 24.83 0 16.004 0zm0 29.3a13.26 13.26 0 01-6.76-1.85l-.484-.288-4.926 1.292 1.316-4.804-.316-.494A13.25 13.25 0 012.7 16.004c0-7.34 5.97-13.31 13.304-13.31 7.34 0 13.31 5.97 13.31 13.31 0 7.334-5.97 13.296-13.31 13.296zm7.3-9.96c-.4-.2-2.37-1.17-2.738-1.304-.368-.134-.636-.2-.904.2-.268.4-1.036 1.304-1.27 1.572-.234.268-.468.3-.868.1-.4-.2-1.69-.622-3.22-1.984-1.19-1.06-1.994-2.37-2.228-2.77-.234-.4-.026-.616.176-.816.18-.18.4-.468.6-.702.2-.234.268-.4.4-.668.134-.268.066-.502-.034-.702-.1-.2-.904-2.178-1.238-2.98-.326-.784-.658-.678-.904-.69h-.772c-.268 0-.702.1-1.07.502-.368.4-1.404 1.372-1.404 3.346 0 1.974 1.436 3.88 1.636 4.148.2.268 2.826 4.314 6.846 6.05 2.55 1.104 3.55 1.192 4.824.998.736-.114 2.37-.968 2.704-1.904.334-.936.334-1.738.234-1.904-.1-.168-.368-.268-.768-.468z"/></svg>
-  </a>
-  <script>
-    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-
-      document.querySelectorAll('body > section:not(.hero), body > footer').forEach((section) => {
-        section.classList.add('reveal-on-scroll');
-        revealObserver.observe(section);
-      });
-    }
-  </script>
-</body>
+        document
+          .querySelectorAll('body > section:not(.hero), body > footer')
+          .forEach((section) => {
+            section.classList.add('reveal-on-scroll');
+            revealObserver.observe(section);
+          });
+      }
+    </script>
+  </body>
 </html>
