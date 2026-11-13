@@ -1,282 +1,300 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cartão de Visita - Home Massagem</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: #e8ece4;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      padding: 40px 20px;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cartão de Visita - Home Spa</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-      color: #2F3529;
-      font-size: 1.7rem;
-    }
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background: #e8ece4;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 40px 20px;
+      }
 
-    .instructions {
-      text-align: center;
-      color: #666;
-      font-size: 0.9rem;
-      max-width: 480px;
-      line-height: 1.5;
-      font-weight: 300;
-    }
+      h1 {
+        font-family: 'Cormorant Garamond', serif;
+        color: #2f3529;
+        font-size: 1.7rem;
+      }
 
-    .card-container {
-      display: flex;
-      gap: 35px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+      .instructions {
+        text-align: center;
+        color: #666;
+        font-size: 0.9rem;
+        max-width: 480px;
+        line-height: 1.5;
+        font-weight: 300;
+      }
 
-    .card {
-      width: 340px;
-      height: 200px;
-      border-radius: 10px;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.12);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 26px 30px;
-    }
+      .card-container {
+        display: flex;
+        gap: 35px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
 
-    /* FRENTE */
-    .card-front {
-      background: linear-gradient(145deg, #F7F9F4 0%, #E8F0E4 100%);
-      border: 1px solid rgba(126, 184, 168, 0.25);
-    }
+      .card {
+        width: 340px;
+        height: 200px;
+        border-radius: 10px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 26px 30px;
+      }
 
-    .card-front .tulip {
-      position: absolute;
-      right: 22px;
-      bottom: 18px;
-      font-size: 52px;
-      opacity: 0.18;
-      line-height: 1;
-    }
+      /* FRENTE */
+      .card-front {
+        background: linear-gradient(145deg, #f7f9f4 0%, #e8f0e4 100%);
+        border: 1px solid rgba(126, 184, 168, 0.25);
+      }
 
-    .card-front .brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.85rem;
-      color: #6B7F4E;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
+      .card-front .tulip {
+        position: absolute;
+        right: 22px;
+        bottom: 18px;
+        font-size: 52px;
+        opacity: 0.18;
+        line-height: 1;
+      }
 
-    .card-front .brand span {
-      color: #2F3529;
-      font-weight: 400;
-    }
+      .card-front .brand {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.85rem;
+        color: #6b7f4e;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
 
-    .card-front .tagline {
-      font-size: 0.72rem;
-      color: #5A6352;
-      margin-top: 5px;
-      font-weight: 300;
-      letter-spacing: 0.4px;
-    }
+      .card-front .brand span {
+        color: #2f3529;
+        font-weight: 400;
+      }
 
-    .card-front .line {
-      width: 36px;
-      height: 1.5px;
-      background: #7EB8A8;
-      margin: 14px 0 12px;
-    }
+      .card-front .tagline {
+        font-size: 0.72rem;
+        color: #5a6352;
+        margin-top: 5px;
+        font-weight: 300;
+        letter-spacing: 0.4px;
+      }
 
-    .card-front .services {
-      font-size: 0.7rem;
-      color: #5A6352;
-      line-height: 1.55;
-      font-weight: 300;
-    }
+      .card-front .line {
+        width: 36px;
+        height: 1.5px;
+        background: #7eb8a8;
+        margin: 14px 0 12px;
+      }
 
-    /* VERSO */
-    .card-back {
-      background: linear-gradient(145deg, #6B7F4E 0%, #556640 100%);
-      color: white;
-    }
+      .card-front .services {
+        font-size: 0.7rem;
+        color: #5a6352;
+        line-height: 1.55;
+        font-weight: 300;
+      }
 
-    .card-back .tulip {
-      position: absolute;
-      right: 20px;
-      top: 18px;
-      font-size: 42px;
-      opacity: 0.15;
-      line-height: 1;
-    }
+      /* VERSO */
+      .card-back {
+        background: linear-gradient(145deg, #6b7f4e 0%, #556640 100%);
+        color: white;
+      }
 
-    .card-back .name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
+      .card-back .tulip {
+        position: absolute;
+        right: 20px;
+        top: 18px;
+        font-size: 42px;
+        opacity: 0.15;
+        line-height: 1;
+      }
 
-    .card-back .role {
-      font-size: 0.72rem;
-      opacity: 0.85;
-      font-weight: 300;
-      margin-bottom: 16px;
-    }
+      .card-back .name {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.35rem;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
 
-    .card-back .info {
-      font-size: 0.78rem;
-      line-height: 1.7;
-      font-weight: 300;
-    }
+      .card-back .role {
+        font-size: 0.72rem;
+        opacity: 0.85;
+        font-weight: 300;
+        margin-bottom: 16px;
+      }
 
-    .card-back .info strong {
-      font-weight: 500;
-      opacity: 0.95;
-    }
+      .card-back .info {
+        font-size: 0.78rem;
+        line-height: 1.7;
+        font-weight: 300;
+      }
 
-    .card-back .whatsapp-line {
-      margin-top: 14px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.3px;
-    }
+      .card-back .info strong {
+        font-weight: 500;
+        opacity: 0.95;
+      }
 
-    /* DIGITAL */
-    .card-digital {
-      width: 300px;
-      min-height: 400px;
-      background: linear-gradient(160deg, #F7F9F4, #E8F0E4);
-      border-radius: 18px;
-      padding: 28px 24px;
-      text-align: center;
-      border: 1px solid rgba(126, 184, 168, 0.2);
-      box-shadow: 0 12px 35px rgba(0,0,0,0.1);
-    }
+      .card-back .whatsapp-line {
+        margin-top: 14px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+      }
 
-    .card-digital .photo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid white;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-      margin-bottom: 14px;
-    }
+      /* DIGITAL */
+      .card-digital {
+        width: 300px;
+        min-height: 400px;
+        background: linear-gradient(160deg, #f7f9f4, #e8f0e4);
+        border-radius: 18px;
+        padding: 28px 24px;
+        text-align: center;
+        border: 1px solid rgba(126, 184, 168, 0.2);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+      }
 
-    .card-digital .brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      color: #6B7F4E;
-      font-weight: 600;
-    }
+      .card-digital .photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid white;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        margin-bottom: 14px;
+      }
 
-    .card-digital .brand span {
-      color: #2F3529;
-    }
+      .card-digital .brand {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.6rem;
+        color: #6b7f4e;
+        font-weight: 600;
+      }
 
-    .card-digital .tagline {
-      font-size: 0.75rem;
-      color: #5A6352;
-      margin: 4px 0 12px;
-      font-weight: 300;
-    }
+      .card-digital .brand span {
+        color: #2f3529;
+      }
 
-    .card-digital .line {
-      width: 40px;
-      height: 1.5px;
-      background: #7EB8A8;
-      margin: 0 auto 14px;
-    }
+      .card-digital .tagline {
+        font-size: 0.75rem;
+        color: #5a6352;
+        margin: 4px 0 12px;
+        font-weight: 300;
+      }
 
-    .card-digital .info-list {
-      text-align: left;
-      font-size: 0.82rem;
-      color: #3D4535;
-      line-height: 1.75;
-      margin-bottom: 16px;
-      font-weight: 300;
-    }
+      .card-digital .line {
+        width: 40px;
+        height: 1.5px;
+        background: #7eb8a8;
+        margin: 0 auto 14px;
+      }
 
-    .card-digital .btn {
-      background: #6B7F4E;
-      color: white;
-      padding: 11px 22px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      display: inline-block;
-    }
+      .card-digital .info-list {
+        text-align: left;
+        font-size: 0.82rem;
+        color: #3d4535;
+        line-height: 1.75;
+        margin-bottom: 16px;
+        font-weight: 300;
+      }
 
-    @media print {
-      body { background: white; padding: 0; }
-      .instructions, h1 { display: none; }
-      .card { box-shadow: none; page-break-inside: avoid; }
-    }
-  </style>
-</head>
-<body>
-  <h1>Cartão de Visita — Home Massagem</h1>
-  <p class="instructions">
-    Versão limpa e elegante com tulipa branca.<br>
-    Para imprimir: abra no navegador → Ctrl+P → Salvar como PDF<br>
-    Tamanho ideal: 9 × 5 cm · Papel couchê 300g
-  </p>
+      .card-digital .btn {
+        background: #6b7f4e;
+        color: white;
+        padding: 11px 22px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 500;
+        display: inline-block;
+      }
 
-  <div class="card-container">
-    <!-- FRENTE -->
-    <div class="card card-front">
-      <div class="brand">Home <span>Massagem</span></div>
-      <div class="tagline">Circuito das Águas · Atendimento humanizado</div>
+      @media print {
+        body {
+          background: white;
+          padding: 0;
+        }
+        .instructions,
+        h1 {
+          display: none;
+        }
+        .card {
+          box-shadow: none;
+          page-break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cartão de Visita — Home Spa</h1>
+    <p class="instructions">
+      Versão limpa e elegante com tulipa branca.<br />
+      Para imprimir: abra no navegador → Ctrl+P → Salvar como PDF<br />
+      Tamanho ideal: 9 × 5 cm · Papel couchê 300g
+    </p>
+
+    <div class="card-container">
+      <!-- FRENTE -->
+      <div class="card card-front">
+        <div class="brand">Home <span>Spa</span></div>
+        <div class="tagline">Circuito das Águas · Atendimento humanizado</div>
+        <div class="line"></div>
+        <div class="services">
+          Relaxante · Drenagem · Reflexologia<br />
+          Facial · Terapêutica
+        </div>
+        <div class="tulip">🌷</div>
+      </div>
+
+      <!-- VERSO -->
+      <div class="card card-back">
+        <div class="tulip">🌷</div>
+        <div class="name">Massoterapeuta</div>
+        <div class="role">Formação Top Corpus</div>
+        <div class="info">
+          <strong>WhatsApp</strong> (19) 98422-8460<br />
+          Lindóia · Águas de Lindóia · Serra Negra<br />
+          Atendimento a domicílio e hotéis
+        </div>
+        <div class="whatsapp-line">Agende sua sessão</div>
+      </div>
+    </div>
+
+    <h1 style="margin-top: 10px">Cartão Digital</h1>
+    <p class="instructions">Para enviar no WhatsApp ou usar nos Stories</p>
+
+    <div class="card-digital">
+      <img src="foto-principal.jpeg" alt="Foto" class="photo" />
+      <div class="brand">Home <span>Spa</span></div>
+      <div class="tagline">O bem-estar chega até você 🌷</div>
       <div class="line"></div>
-      <div class="services">
-        Relaxante · Drenagem · Reflexologia<br>
-        Facial · Terapêutica
+      <div class="info-list">
+        🌿 Massagem Relaxante<br />
+        💧 Drenagem Linfática<br />
+        🦶 Reflexologia & Facial<br />
+        💜 Terapêutica<br /><br />
+        📍 Lindóia · Águas · Serra Negra
       </div>
-      <div class="tulip">🌷</div>
+      <a href="https://wa.me/5519984228460" class="btn" target="_blank"
+        >(19) 98422-8460</a
+      >
     </div>
-
-    <!-- VERSO -->
-    <div class="card card-back">
-      <div class="tulip">🌷</div>
-      <div class="name">Massoterapeuta</div>
-      <div class="role">Formação Top Corpus</div>
-      <div class="info">
-        <strong>WhatsApp</strong> (19) 98422-8460<br>
-        Lindóia · Águas de Lindóia · Serra Negra<br>
-        Atendimento a domicílio e hotéis
-      </div>
-      <div class="whatsapp-line">Agende sua sessão</div>
-    </div>
-  </div>
-
-  <h1 style="margin-top: 10px;">Cartão Digital</h1>
-  <p class="instructions">Para enviar no WhatsApp ou usar nos Stories</p>
-
-  <div class="card-digital">
-    <img src="foto-principal.jpeg" alt="Foto" class="photo">
-    <div class="brand">Home <span>Massagem</span></div>
-    <div class="tagline">O bem-estar chega até você 🌷</div>
-    <div class="line"></div>
-    <div class="info-list">
-      🌿 Massagem Relaxante<br>
-      💧 Drenagem Linfática<br>
-      🦶 Reflexologia & Facial<br>
-      💜 Terapêutica<br><br>
-      📍 Lindóia · Águas · Serra Negra
-    </div>
-    <a href="https://wa.me/5519984228460" class="btn" target="_blank">(19) 98422-8460</a>
-  </div>
-</body>
+  </body>
 </html>
