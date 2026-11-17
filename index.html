@@ -331,6 +331,8 @@
       }
 
       .service-card {
+        display: flex;
+        flex-direction: column;
         background: white;
         border-radius: 24px;
         padding: 2.2rem 1.8rem;
@@ -800,6 +802,114 @@
           font-size: 0.75rem;
         }
       }
+
+      /* Estilos para preço promocional */
+      .price-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .price-name {
+        font-size: 18px;
+        color: #333;
+      }
+
+      .price-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .new-price-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .promotion-caption {
+        color: #333;
+        font-size: 0.65rem;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .service-card .price-wrapper {
+        margin-top: auto;
+      }
+
+      /* Preço antigo riscado */
+      .old-price {
+        font-size: 22px;
+        color: #333;
+        position: relative;
+        font-weight: 600;
+      }
+
+      .old-price::after {
+        content: '';
+        position: absolute;
+        left: -5%;
+        top: 50%;
+        width: 110%;
+        height: 4px;
+        background-color: #ff3333;
+        transform: rotate(-8deg);
+      }
+
+      /* Selo amarelo de desconto */
+      .new-price-badge {
+        background-color: #ffdd33;
+        color: #000;
+        font-size: 22px;
+        font-weight: 900;
+        padding: 16px 20px;
+        clip-path: polygon(
+          50% 0%,
+          57% 14%,
+          69% 4%,
+          71% 19%,
+          85% 15%,
+          81% 29%,
+          96% 31%,
+          86% 43%,
+          100% 50%,
+          86% 57%,
+          96% 69%,
+          81% 71%,
+          85% 85%,
+          71% 81%,
+          69% 96%,
+          57% 86%,
+          50% 100%,
+          43% 86%,
+          31% 96%,
+          29% 81%,
+          15% 85%,
+          19% 71%,
+          4% 69%,
+          14% 57%,
+          0% 50%,
+          14% 43%,
+          4% 31%,
+          19% 29%,
+          15% 15%,
+          29% 19%,
+          31% 4%,
+          43% 14%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 100px;
+        min-height: 100px;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -911,7 +1021,13 @@
             Alívio profundo de tensões, redução do estresse e sensação de
             bem-estar completo. Ideal para quem precisa desacelerar.
           </p>
-          <div class="service-price">R$ 160 – 180</div>
+          <div class="price-wrapper">
+            <span class="old-price">R$ 180</span>
+            <span class="new-price-container">
+              <span class="new-price-badge">R$ 153</span>
+              <small class="promotion-caption">*Promoção Fim de ano</small>
+            </span>
+          </div>
           <div class="service-duration">50 a 60 minutos</div>
         </div>
         <div class="service-card">
@@ -921,7 +1037,13 @@
             Reduz inchaço, melhora a circulação e elimina toxinas. Técnica suave
             e eficaz para o corpo e a autoestima.
           </p>
-          <div class="service-price">R$ 170 – 200</div>
+          <div class="price-wrapper">
+            <span class="old-price">R$ 200</span>
+            <span class="new-price-container">
+              <span class="new-price-badge">R$ 170</span>
+              <small class="promotion-caption">*Promoção Fim de ano</small>
+            </span>
+          </div>
           <div class="service-duration">50 a 60 minutos</div>
         </div>
         <div class="service-card">
@@ -931,7 +1053,13 @@
             Estimulação de pontos nos pés que se conectam a todo o corpo. Alívio
             de dores e equilíbrio energético.
           </p>
-          <div class="service-price">R$ 130 – 150</div>
+          <div class="price-wrapper">
+            <span class="old-price">R$ 150</span>
+            <span class="new-price-container">
+              <span class="new-price-badge">R$ 127,50</span>
+              <small class="promotion-caption">*Promoção Fim de ano</small>
+            </span>
+          </div>
           <div class="service-duration">40 a 50 minutos</div>
         </div>
         <div class="service-card">
@@ -941,7 +1069,13 @@
             Relaxamento da face, redução de tensão e revitalização da pele. Um
             momento de cuidado especial.
           </p>
-          <div class="service-price">R$ 120 – 140</div>
+          <div class="price-wrapper">
+            <span class="old-price">R$ 140</span>
+            <span class="new-price-container">
+              <span class="new-price-badge">R$ 119</span>
+              <small class="promotion-caption">*Promoção Fim de ano</small>
+            </span>
+          </div>
           <div class="service-duration">40 a 50 minutos</div>
         </div>
         <div class="service-card">
@@ -951,7 +1085,13 @@
             Atendimento especializado e cuidadoso para alívio de dores crônicas
             e melhora da qualidade de vida.
           </p>
-          <div class="service-price">R$ 190 – 220</div>
+          <div class="price-wrapper">
+            <span class="old-price">R$ 220</span>
+            <span class="new-price-container">
+              <span class="new-price-badge">R$ 187</span>
+              <small class="promotion-caption">*Promoção Fim de ano</small>
+            </span>
+          </div>
           <div class="service-duration">60 minutos</div>
         </div>
       </div>
@@ -984,6 +1124,7 @@
             transforma o momento da massagem em um verdadeiro ritual de
             bem-estar.
           </p>
+          <p>Transformando vidas através do toque.</p>
           <div class="about-highlights">
             <span class="highlight">Top Corpus</span>
             <span class="highlight">Atendimento a domicílio</span>
@@ -1112,23 +1253,53 @@
       <div class="prices-table">
         <div class="price-row">
           <span class="price-name">Massagem Relaxante</span>
-          <span class="price-value">R$ 160 – 180</span>
+          <div class="price-wrapper">
+            <span class="old-price">R$ 180</span>
+            <span class="new-price-container">
+              <span class="new-price-badge">R$ 153</span>
+              <small class="promotion-caption">*Promoção Fim de ano</small>
+            </span>
+          </div>
         </div>
         <div class="price-row">
           <span class="price-name">Drenagem Linfática</span>
-          <span class="price-value">R$ 170 – 200</span>
+          <div class="price-wrapper">
+            <span class="old-price">R$ 200</span>
+            <span class="new-price-container">
+              <span class="new-price-badge">R$ 170</span>
+              <small class="promotion-caption">*Promoção Fim de ano</small>
+            </span>
+          </div>
         </div>
         <div class="price-row">
           <span class="price-name">Reflexologia</span>
-          <span class="price-value">R$ 130 – 150</span>
+          <div class="price-wrapper">
+            <span class="old-price">R$ 150</span>
+            <span class="new-price-container">
+              <span class="new-price-badge">R$ 127,50</span>
+              <small class="promotion-caption">*Promoção Fim de ano</small>
+            </span>
+          </div>
         </div>
         <div class="price-row">
           <span class="price-name">Massagem Facial</span>
-          <span class="price-value">R$ 120 – 140</span>
+          <div class="price-wrapper">
+            <span class="old-price">R$ 140</span>
+            <span class="new-price-container">
+              <span class="new-price-badge">R$ 119</span>
+              <small class="promotion-caption">*Promoção Fim de ano</small>
+            </span>
+          </div>
         </div>
         <div class="price-row">
           <span class="price-name">Terapêutica (Fibromialgia)</span>
-          <span class="price-value">R$ 190 – 220</span>
+          <div class="price-wrapper">
+            <span class="old-price">R$ 220</span>
+            <span class="new-price-container">
+              <span class="new-price-badge">R$ 187</span>
+              <small class="promotion-caption">*Promoção Fim de ano</small>
+            </span>
+          </div>
         </div>
       </div>
       <p class="price-note">
