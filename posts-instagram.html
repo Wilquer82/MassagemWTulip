@@ -1,262 +1,395 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Posts Instagram - Home Massagem | Tulipas Brancas</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --cream: #FDFBF7;
-      --soft-pink: #F5E6E0;
-      --leaf: #7A9B7A;
-      --soft-green: #A8C5A8;
-      --text: #3D3D3D;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: #f0ece4;
-      padding: 40px 20px;
-      color: var(--text);
-    }
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-      text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 10px;
-    }
-    .subtitle {
-      text-align: center;
-      color: #666;
-      margin-bottom: 40px;
-      font-weight: 300;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .post {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-    .post-visual {
-      aspect-ratio: 1/1;
-      background: linear-gradient(160deg, var(--cream), var(--soft-pink));
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 30px;
-      text-align: center;
-      position: relative;
-    }
-    .post-visual::before {
-      content: '🌷';
-      position: absolute;
-      font-size: 140px;
-      opacity: 0.07;
-      bottom: -20px;
-      right: -10px;
-    }
-    .post-visual img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid white;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      margin-bottom: 18px;
-      z-index: 1;
-    }
-    .post-visual h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      color: var(--text);
-      z-index: 1;
-      line-height: 1.2;
-    }
-    .post-visual h2 span {
-      color: var(--leaf);
-      font-style: italic;
-    }
-    .post-visual .small {
-      font-size: 0.85rem;
-      color: #666;
-      margin-top: 10px;
-      font-weight: 300;
-      z-index: 1;
-    }
-    .post-visual .price {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      color: var(--leaf);
-      margin-top: 12px;
-      font-weight: 600;
-      z-index: 1;
-    }
-    .post-visual .badge {
-      background: var(--leaf);
-      color: white;
-      padding: 6px 16px;
-      border-radius: 30px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      margin-bottom: 14px;
-      z-index: 1;
-    }
-    .post-caption {
-      padding: 20px;
-      font-size: 0.9rem;
-      line-height: 1.55;
-      color: #444;
-    }
-    .post-caption strong {
-      color: var(--leaf);
-    }
-    .hashtags {
-      margin-top: 12px;
-      font-size: 0.8rem;
-      color: #888;
-    }
-    .copy-btn {
-      display: inline-block;
-      margin-top: 10px;
-      background: var(--soft-green);
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      cursor: pointer;
-      font-family: inherit;
-    }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      margin: 50px 0 20px;
-      text-align: center;
-      color: var(--leaf);
-    }
-  </style>
-</head>
-<body>
-  <h1>🌷 Posts Instagram — Home Massagem</h1>
-  <p class="subtitle">Tema Tulipas Brancas · Pronto para copiar e usar</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posts Instagram - Home Massagem | Tulipas Brancas</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #fdfbf7;
+        --soft-pink: #f5e6e0;
+        --leaf: #7a9b7a;
+        --soft-green: #a8c5a8;
+        --text: #3d3d3d;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background: #f0ece4;
+        padding: 40px 20px;
+        color: var(--text);
+      }
+      h1 {
+        font-family: 'Cormorant Garamond', serif;
+        text-align: center;
+        font-size: 2.4rem;
+        margin-bottom: 10px;
+      }
+      .subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 40px;
+        font-weight: 300;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .post {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+      .post-visual {
+        aspect-ratio: 1/1;
+        background: linear-gradient(160deg, var(--cream), var(--soft-pink));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+        text-align: center;
+        position: relative;
+      }
+      .post-visual::before {
+        content: '🌷';
+        position: absolute;
+        font-size: 140px;
+        opacity: 0.07;
+        bottom: -20px;
+        right: -10px;
+      }
+      .post-visual img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid white;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 18px;
+        z-index: 1;
+      }
+      .post-visual h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.8rem;
+        color: var(--text);
+        z-index: 1;
+        line-height: 1.2;
+      }
+      .post-visual h2 span {
+        color: var(--leaf);
+        font-style: italic;
+      }
+      .post-visual .small {
+        font-size: 0.85rem;
+        color: #666;
+        margin-top: 10px;
+        font-weight: 300;
+        z-index: 1;
+      }
+      .post-visual .price-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 12px;
+        z-index: 1;
+      }
+      .old-price {
+        font-size: 22px;
+        color: #333;
+        position: relative;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      .old-price::after {
+        content: '';
+        position: absolute;
+        left: -5%;
+        top: 50%;
+        width: 110%;
+        height: 4px;
+        background-color: #ff3333;
+        transform: rotate(-8deg);
+      }
+      .new-price-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+      }
+      .new-price-badge {
+        background-color: #ffdd33;
+        color: #000;
+        font-size: 22px;
+        font-weight: 900;
+        padding: 16px 20px;
+        clip-path: polygon(
+          50% 0%, 57% 14%, 69% 4%, 71% 19%, 85% 15%, 81% 29%, 96% 31%,
+          86% 43%, 100% 50%, 86% 57%, 96% 69%, 81% 71%, 85% 85%,
+          71% 81%, 69% 96%, 57% 86%, 50% 100%, 43% 86%, 31% 96%,
+          29% 81%, 15% 85%, 19% 71%, 4% 69%, 14% 57%, 0% 50%, 14% 43%,
+          4% 31%, 19% 29%, 15% 15%, 29% 19%, 31% 4%, 43% 14%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 100px;
+        min-height: 100px;
+        text-align: center;
+      }
+      .promotion-caption {
+        color: #333;
+        font-size: 0.65rem;
+        line-height: 1;
+        text-align: center;
+      }
+      .post-visual .badge {
+        background: var(--leaf);
+        color: white;
+        padding: 6px 16px;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        margin-bottom: 14px;
+        z-index: 1;
+      }
+      .post-caption {
+        padding: 20px;
+        font-size: 0.9rem;
+        line-height: 1.55;
+        color: #444;
+      }
+      .post-caption strong {
+        color: var(--leaf);
+      }
+      .hashtags {
+        margin-top: 12px;
+        font-size: 0.8rem;
+        color: #888;
+      }
+      .copy-btn {
+        display: inline-block;
+        margin-top: 10px;
+        background: var(--soft-green);
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      .section-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.6rem;
+        margin: 50px 0 20px;
+        text-align: center;
+        color: var(--leaf);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🌷 Posts Instagram — Home Massagem</h1>
+    <p class="subtitle">Tema Tulipas Brancas · Pronto para copiar e usar</p>
 
-  <div class="grid">
-    <!-- Post 1 -->
-    <div class="post">
-      <div class="post-visual">
-        <div class="badge">Primeira sessão</div>
-        <img src="foto-principal.jpeg" alt="Foto">
-        <h2>Sua primeira sessão <span>comigo</span></h2>
-        <p class="small">Eu te recebo com calma e conduzo tudo do começo ao fim</p>
+    <div class="grid">
+      <!-- Post 1 -->
+      <div class="post">
+        <div class="post-visual">
+          <div class="badge">Primeira sessão</div>
+          <img src="foto-principal.jpeg" alt="Foto" />
+          <h2>Sua primeira sessão <span>comigo</span></h2>
+          <p class="small">
+            Eu te recebo com calma e conduzo tudo do começo ao fim
+          </p>
+        </div>
+        <div class="post-caption">
+          <strong>Sua primeira sessão comigo 🌷</strong><br /><br />
+          Eu te recebo com calma, converso sobre o que você precisa e conduzo o
+          atendimento do começo ao fim.<br /><br />
+          Massagem humanizada em Lindóia, Águas de Lindóia e Serra Negra.<br /><br />
+          Me chama no WhatsApp e vamos cuidar de você 💚<br />
+          (19) 98422-8460
+          <div class="hashtags">
+            #HomeMassagem #MassagemHumanizada #CircuitoDasÁguas #Lindóia
+            #ÁguasDeLindóia #SerraNegra #BemEstar
+          </div>
+        </div>
       </div>
-      <div class="post-caption">
-        <strong>Sua primeira sessão comigo 🌷</strong><br><br>
-        Eu te recebo com calma, converso sobre o que você precisa e conduzo o atendimento do começo ao fim.<br><br>
-        Massagem humanizada em Lindóia, Águas de Lindóia e Serra Negra.<br><br>
-        Me chama no WhatsApp e vamos cuidar de você 💚<br>
-        (19) 98422-8460
-        <div class="hashtags">#HomeMassagem #MassagemHumanizada #CircuitoDasÁguas #Lindóia #ÁguasDeLindóia #SerraNegra #BemEstar</div>
+
+      <!-- Post 2 -->
+      <div class="post">
+        <div class="post-visual">
+          <h2 style="font-size: 2.2rem">
+            Massagem<br /><span>Relaxante</span>
+          </h2>
+          <div class="price-wrapper">
+            <span class="old-price">R$ 180</span>
+            <span class="new-price-container">
+              <span class="new-price-badge">R$ 153</span>
+              <small class="promotion-caption">*Promoção Fim de ano</small>
+            </span>
+          </div>
+          <p class="small">50 a 60 minutos · A domicílio</p>
+        </div>
+        <div class="post-caption">
+          <strong>Massagem Relaxante 🌿</strong><br /><br />
+          Alívio profundo de tensões, redução do estresse e aquela sensação
+          gostosa de leveza no corpo e na mente.<br /><br />
+          Atendo em casa, hotel ou pousada em Lindóia, Águas de Lindóia e Serra
+          Negra.<br /><br />
+          Agende pelo WhatsApp: (19) 98422-8460
+          <div class="hashtags">
+            #MassagemRelaxante #MassagemADomicílio #BemEstar #HomeMassagem
+            #CircuitoDasÁguas
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 3 -->
+      <div class="post">
+        <div class="post-visual">
+          <div class="badge">Especialidade</div>
+          <h2>Drenagem<br /><span>Linfática</span></h2>
+          <div class="price-wrapper">
+            <span class="old-price">R$ 200</span>
+            <span class="new-price-container">
+              <span class="new-price-badge">R$ 170</span>
+              <small class="promotion-caption">*Promoção Fim de ano</small>
+            </span>
+          </div>
+          <p class="small">Reduz inchaço · Melhora circulação</p>
+        </div>
+        <div class="post-caption">
+          <strong>Drenagem Linfática 💧</strong><br /><br />
+          Técnica suave que ajuda a eliminar toxinas, reduzir o inchaço e
+          melhorar a circulação. Ideal para quem busca leveza e bem-estar
+          real.<br /><br />
+          Atendimento humanizado com formação Top Corpus.<br /><br />
+          Me chama: (19) 98422-8460
+          <div class="hashtags">
+            #DrenagemLinfática #Massagem #BemEstarFeminino #HomeMassagem
+            #ÁguasDeLindóia
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 4 -->
+      <div class="post">
+        <div class="post-visual">
+          <img
+            src="foto-extra.jpeg"
+            alt="Foto"
+            style="width: 120px; height: 120px"
+          />
+          <h2 style="font-size: 1.6rem; margin-top: 10px">
+            O bem-estar<br /><span>chega até você</span>
+          </h2>
+          <p class="small">Lindóia · Águas · Serra Negra</p>
+        </div>
+        <div class="post-caption">
+          <strong>O bem-estar chega até você 🌷</strong><br /><br />
+          Não precisa sair de casa. Eu levo a maca, os óleos e todo o cuidado
+          até você — seja na sua casa, hotel ou pousada.<br /><br />
+          Massagem Relaxante · Drenagem · Reflexologia · Facial · Terapêutica<br /><br />
+          WhatsApp: (19) 98422-8460
+          <div class="hashtags">
+            #MassagemADomicílio #HomeMassagem #CircuitoDasÁguas
+            #MassagemHumanizada
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 5 -->
+      <div class="post">
+        <div class="post-visual">
+          <div class="badge">Cuidado especial</div>
+          <h2>Terapêutica<br /><span>Fibromialgia</span></h2>
+          <div class="price-wrapper">
+            <span class="old-price">R$ 220</span>
+            <span class="new-price-container">
+              <span class="new-price-badge">R$ 187</span>
+              <small class="promotion-caption">*Promoção Fim de ano</small>
+            </span>
+          </div>
+          <p class="small">Toque cuidadoso e personalizado</p>
+        </div>
+        <div class="post-caption">
+          <strong>Massagem Terapêutica para Fibromialgia 💜</strong><br /><br />
+          Atendimento especializado, com escuta e respeito ao seu corpo. Sessões
+          pensadas para aliviar dores e trazer mais qualidade de vida.<br /><br />
+          Formação Top Corpus · Atendimento humanizado<br /><br />
+          Agende: (19) 98422-8460
+          <div class="hashtags">
+            #Fibromialgia #MassagemTerapêutica #DorCrônica #HomeMassagem
+            #CuidadoHumanizado
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 6 - Stories idea -->
+      <div class="post">
+        <div
+          class="post-visual"
+          style="
+            background: linear-gradient(160deg, #7a9b7a, #6a8a6a);
+            color: white;
+          "
+        >
+          <h2 style="color: white; font-size: 2rem">
+            Me chama<br />no WhatsApp
+          </h2>
+          <p
+            class="small"
+            style="color: rgba(255, 255, 255, 0.9); margin-top: 12px"
+          >
+            (19) 98422-8460
+          </p>
+          <p
+            class="small"
+            style="color: rgba(255, 255, 255, 0.8); margin-top: 20px"
+          >
+            🌷 Home Massagem
+          </p>
+        </div>
+        <div class="post-caption">
+          <strong>Ideia de Story / Destaque</strong><br /><br />
+          Use como capa de destaque “Agendar” ou story de chamada direta.<br /><br />
+          Texto curto + link direto do WhatsApp.
+          <div class="hashtags">#AgendeJá #WhatsApp #HomeMassagem</div>
+        </div>
       </div>
     </div>
 
-    <!-- Post 2 -->
-    <div class="post">
-      <div class="post-visual">
-        <h2 style="font-size: 2.2rem;">Massagem<br><span>Relaxante</span></h2>
-        <p class="price">R$ 160 – 180</p>
-        <p class="small">50 a 60 minutos · A domicílio</p>
-      </div>
-      <div class="post-caption">
-        <strong>Massagem Relaxante 🌿</strong><br><br>
-        Alívio profundo de tensões, redução do estresse e aquela sensação gostosa de leveza no corpo e na mente.<br><br>
-        Atendo em casa, hotel ou pousada em Lindóia, Águas de Lindóia e Serra Negra.<br><br>
-        Agende pelo WhatsApp: (19) 98422-8460
-        <div class="hashtags">#MassagemRelaxante #MassagemADomicílio #BemEstar #HomeMassagem #CircuitoDasÁguas</div>
-      </div>
+    <p class="section-title">Dicas de uso</p>
+    <div
+      style="
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+        color: #555;
+        font-weight: 300;
+        line-height: 1.7;
+      "
+    >
+      • Use as cores creme, verde sálvia e rosa suave em todos os posts.<br />
+      • Sempre inclua o número do WhatsApp e a região.<br />
+      • Alterne fotos suas com cards de serviço.<br />
+      • Nos stories, use a versão verde com chamada direta.<br />
+      • Hashtags principais: #HomeMassagem #CircuitoDasÁguas #MassagemHumanizada
     </div>
-
-    <!-- Post 3 -->
-    <div class="post">
-      <div class="post-visual">
-        <div class="badge">Especialidade</div>
-        <h2>Drenagem<br><span>Linfática</span></h2>
-        <p class="price">R$ 170 – 200</p>
-        <p class="small">Reduz inchaço · Melhora circulação</p>
-      </div>
-      <div class="post-caption">
-        <strong>Drenagem Linfática 💧</strong><br><br>
-        Técnica suave que ajuda a eliminar toxinas, reduzir o inchaço e melhorar a circulação. Ideal para quem busca leveza e bem-estar real.<br><br>
-        Atendimento humanizado com formação Top Corpus.<br><br>
-        Me chama: (19) 98422-8460
-        <div class="hashtags">#DrenagemLinfática #Massagem #BemEstarFeminino #HomeMassagem #ÁguasDeLindóia</div>
-      </div>
-    </div>
-
-    <!-- Post 4 -->
-    <div class="post">
-      <div class="post-visual">
-        <img src="foto-extra.jpeg" alt="Foto" style="width:120px;height:120px;">
-        <h2 style="font-size: 1.6rem; margin-top: 10px;">O bem-estar<br><span>chega até você</span></h2>
-        <p class="small">Lindóia · Águas · Serra Negra</p>
-      </div>
-      <div class="post-caption">
-        <strong>O bem-estar chega até você 🌷</strong><br><br>
-        Não precisa sair de casa. Eu levo a maca, os óleos e todo o cuidado até você — seja na sua casa, hotel ou pousada.<br><br>
-        Massagem Relaxante · Drenagem · Reflexologia · Facial · Terapêutica<br><br>
-        WhatsApp: (19) 98422-8460
-        <div class="hashtags">#MassagemADomicílio #HomeMassagem #CircuitoDasÁguas #MassagemHumanizada</div>
-      </div>
-    </div>
-
-    <!-- Post 5 -->
-    <div class="post">
-      <div class="post-visual">
-        <div class="badge">Cuidado especial</div>
-        <h2>Terapêutica<br><span>Fibromialgia</span></h2>
-        <p class="price">R$ 190 – 220</p>
-        <p class="small">Toque cuidadoso e personalizado</p>
-      </div>
-      <div class="post-caption">
-        <strong>Massagem Terapêutica para Fibromialgia 💜</strong><br><br>
-        Atendimento especializado, com escuta e respeito ao seu corpo. Sessões pensadas para aliviar dores e trazer mais qualidade de vida.<br><br>
-        Formação Top Corpus · Atendimento humanizado<br><br>
-        Agende: (19) 98422-8460
-        <div class="hashtags">#Fibromialgia #MassagemTerapêutica #DorCrônica #HomeMassagem #CuidadoHumanizado</div>
-      </div>
-    </div>
-
-    <!-- Post 6 - Stories idea -->
-    <div class="post">
-      <div class="post-visual" style="background: linear-gradient(160deg, #7A9B7A, #6a8a6a); color: white;">
-        <h2 style="color: white; font-size: 2rem;">Me chama<br>no WhatsApp</h2>
-        <p class="small" style="color: rgba(255,255,255,0.9); margin-top: 12px;">(19) 98422-8460</p>
-        <p class="small" style="color: rgba(255,255,255,0.8); margin-top: 20px;">🌷 Home Massagem</p>
-      </div>
-      <div class="post-caption">
-        <strong>Ideia de Story / Destaque</strong><br><br>
-        Use como capa de destaque “Agendar” ou story de chamada direta.<br><br>
-        Texto curto + link direto do WhatsApp.
-        <div class="hashtags">#AgendeJá #WhatsApp #HomeMassagem</div>
-      </div>
-    </div>
-  </div>
-
-  <p class="section-title">Dicas de uso</p>
-  <div style="max-width:700px;margin:0 auto;text-align:center;color:#555;font-weight:300;line-height:1.7;">
-    • Use as cores creme, verde sálvia e rosa suave em todos os posts.<br>
-    • Sempre inclua o número do WhatsApp e a região.<br>
-    • Alterne fotos suas com cards de serviço.<br>
-    • Nos stories, use a versão verde com chamada direta.<br>
-    • Hashtags principais: #HomeMassagem #CircuitoDasÁguas #MassagemHumanizada
-  </div>
-</body>
+  </body>
 </html>
